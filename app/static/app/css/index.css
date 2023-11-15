@@ -1,0 +1,28 @@
+.rightbox   {
+    float: right;
+    margin: 15px;
+    margin-right: 20%;
+    box-shadow: 10px;
+    font-size: 25px;
+    background-color: #92EE3F;
+    opacity: 80%;
+    font-weight: 500;
+}
+
+.details p  {
+    margin: 10px;
+}
+
+.search_bar {
+    width: 100%;
+    height: 30px;
+    font-size: 25px;
+}
+
+.leftbox    {
+    float: left;
+    margin: 15px;
+    margin-left: 20%;
+    font-size: 25px;
+    font-weight: 400;
+}
