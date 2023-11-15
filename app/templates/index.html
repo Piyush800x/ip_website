@@ -3,11 +3,11 @@
 {% block content %}
 <div class="rightbox">
     <div class="search">
-        <form action="post" name="ip-addr">
+        <form action="/" name="ip-addr" method="post">
             {% csrf_token %}
-            <input class="search_bar" name="ip-addr" type="text" required value="{{ip}}">
+            <input class="search_bar" type="text" name="ip-addr" required value="{{ip}}">
+            <input type="submit" class="search_icon" value="🔍">
         </form>
-        <button class="search_icon">🔍</button>
     </div>
     <div class="details">
         <p>city: {{ city }}</p>

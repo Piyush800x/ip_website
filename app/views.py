@@ -8,7 +8,15 @@ def base(request):
 
 
 def home(request):
-    return render(request, "index.html", ipinfos(request))
+    if request.method == "POST":
+        ip = request.POST['ip-addr']
+    if request.method == "GET":
+        ip = get_client_ip(request)
+    return render(request, "index.html", ipinfos(request, ip))
+
+
+def about(request):
+    return render(request, "about.html")
 
 
 def get_client_ip(request):
@@ -20,16 +28,9 @@ def get_client_ip(request):
     return ip
 
 
-def ipinfos(request):
+def ipinfos(request, ip_addr):
     access_token = '4e4f25d4143dc9'
     handler = ipinfo.getHandler(access_token)
-    ip_addr = get_client_ip(request)
-    details = handler.getDetails("49.37.54.206")
-    search(request)
+    # ip_addr = get_client_ip(request)
+    details = handler.getDetails(ip_addr)
     return details.all
-
-
-def search(request):
-    ip = request.GET
-    print(ip)
-    pass
