@@ -8,8 +8,7 @@ def base(request):
 
 
 def home(request):
-    print(ipinfos(request))
-    return render(request, "index.html")
+    return render(request, "index.html", ipinfos(request))
 
 
 def get_client_ip(request):
@@ -25,5 +24,12 @@ def ipinfos(request):
     access_token = '4e4f25d4143dc9'
     handler = ipinfo.getHandler(access_token)
     ip_addr = get_client_ip(request)
-    details = handler.getDetails(ip_addr)
+    details = handler.getDetails("49.37.54.206")
+    search(request)
     return details.all
+
+
+def search(request):
+    ip = request.GET
+    print(ip)
+    pass

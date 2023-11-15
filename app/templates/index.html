@@ -2,16 +2,21 @@
 
 {% block content %}
 <div class="rightbox">
-    <input class="search_bar" type="text" required>
+    <div class="search">
+        <form action="post" name="ip-addr">
+            {% csrf_token %}
+            <input class="search_bar" name="ip-addr" type="text" required value="{{ip}}">
+        </form>
+        <button class="search_icon">🔍</button>
+    </div>
     <div class="details">
-        <p>city: </p>
-        <p>region: </p>
-        <p>country: </p>
-        <p>loc: </p>
-        <p>isp: </p>
-        <p>asn: </p>
-        <p>postal: </p>
-        <p>timezone: </p>
+        <p>city: {{ city }}</p>
+        <p>region: {{ region }}</p>
+        <p>country: {{ country }}</p>
+        <p>loc: {{ loc }}</p>
+        <p>isp: {{ org }}</p>
+        <p>postal: {{ postal }}</p>
+        <p>timezone: {{ timezone }}</p>
         <p></p>
     </div>
 </div>
