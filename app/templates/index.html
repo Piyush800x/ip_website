@@ -6,7 +6,7 @@
         <form action="/" name="ip-addr" method="post">
             {% csrf_token %}
             <input class="search_bar" type="text" name="ip-addr" required value="{{ip}}">
-            <input type="submit" class="search_icon" value="🔍">
+            <button type="submit" class="search_icon">🔍</button>
         </form>
     </div>
     <div class="details">
