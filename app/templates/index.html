@@ -21,7 +21,14 @@
     </div>
 </div>
 <div class="leftbox">
+    {% load static %}
     <p>Welcome to the world of IPs</p>
+    <div class="image-fader">
+        <img class="image slides slides-hidden" src="{% static '/app/img/img1.png'%}"/>
+        <img class="image slides slides-hidden" src="{% static '/app/img/img2.png'%}"/>
+        <img class="image slides slides-hidden" src="{% static '/app/img/img3.jpg'%}"/>
+        <img class="image slides slides-hidden" src="{% static '/app/img/img4.jpg'%}"/>
+    </div>
 </div>
 
 {% endblock %}

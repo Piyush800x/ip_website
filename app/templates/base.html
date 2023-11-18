@@ -8,12 +8,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/index.css' %}">
     <script src="{% static 'app/js/navbar.js' %}"></script>
+    <script src="{% static 'app/js/index.js' %}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>IP Lookup</title>
 </head>
-<body style='background-image: url(" {% static "app/img/bg.jpg" %}");'>
+<body style="background-image: url('{% static '/app/img/bg.jpg' %}'); background-repeat: no-repeat;">
     <div class="navbar">
         <div class="nav-logo">
             <img src="{% static 'app/img/earth.ico' %}"/>

@@ -34,6 +34,10 @@
     font-weight: 400;
 }
 
+.leftbox p  {
+    margin: 10px;
+}
+
 .search_icon    {
     border: 1px solid black;
     color: white;
@@ -48,3 +52,29 @@
     flex-direction: row;
 }
 
+.leftbox    {
+    font-weight: 400;
+    float: left;
+    background-color: #92EE3F;
+    word-wrap: normal;
+    height: 100%;
+    width: 35%;
+    border-radius: 5px;
+}
+
+.image  {
+    width: 720px;
+    height: 360px;
+    max-width: max-content;
+    margin: 5px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.slides {
+    width: 100%;
+}
+
+.slides-hidden  {
+    display: none;
+}
