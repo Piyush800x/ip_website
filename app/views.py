@@ -19,6 +19,10 @@ def about(request):
     return render(request, "about.html")
 
 
+def history(request):
+    return render(request, "history.html")
+
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:

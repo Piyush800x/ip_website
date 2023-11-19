@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/navbar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/about.css' %}">
     <script src="{% static 'app/js/navbar.js' %}"></script>
     <script src="{% static 'app/js/index.js' %}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,18 +16,26 @@
     <title>IP Lookup</title>
 </head>
 <body style="background-image: url('{% static '/app/img/bg.jpg' %}'); background-repeat: no-repeat;">
+    {% load socialaccount %}
     <div class="navbar">
         <div class="nav-logo">
             <img src="{% static 'app/img/earth.ico' %}"/>
             <p>IP Lookup</p>
         </div>
         <ul class="nav-menu">
-            <li><a href="/" style="text-decoration: none;">Home</a></li>
-            <li><a href="/about" style="text-decoration: none;">About</a></li>
+            <li><a href="/" style="text-decoration: none; color: black;">Home</a></li>
+            <li><a href="/about" style="text-decoration: none; color: black;">About</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/history" style="text-decoration: none; color: black;">History</a></li>
+            {% endif %}
         </ul>
         <div class="nav-login">
-            <button>Login</button>
-            <button>Create</button>
+            {% if not user.is_authenticated %}
+            <button><a style="text-decoration: none; color: black;" href="{% provider_login_url 'google' %}?next=/">Login</a></button>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <button><a style="text-decoration: none; color: black;" href="{% url 'account_logout' %}">Logout</a></button>
+            {% endif %}
         </div>
     </div>
     <div class="container">
